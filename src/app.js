@@ -3,6 +3,7 @@ const express = require('express');
 const hbs = require('hbs');   // in this way we load the hbs module in our file
 
 const app = express(); 
+const port = process.env.PORT || 3000;
 
 // Importing functions from utils directory
 const geoCode = require('./utils/geocode');
@@ -95,6 +96,6 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {    // this will start our server at local host 3000 -> link: https://localhost:3000
-    console.log('Server is up on port 3000');  // this will print in the terminal, and this will be only visible to us!
+app.listen(port, () => {    // this will start our server
+    console.log(`Server is up on port ${port}`);  // this will print in the terminal, and this will be only visible to us!
 });

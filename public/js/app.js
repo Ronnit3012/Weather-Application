@@ -13,7 +13,7 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'loading ...';       // to show the loading message till the fetch api fetches data
     messageTwo.textContent = '';        // to remove any previous content in the second paragraph
 
-    fetch('http://localhost:3000/weather?address=' + location)
+    fetch('/weather?address=' + location)
         .then((response) => {
             response.json()         // we parse the json which we get from the api
                 .then((data) => {
