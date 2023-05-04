@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');   // this will include core node module that is path into our file, this is added just to be organised
 const express = require('express');  
 const hbs = require('hbs');   // in this way we load the hbs module in our file

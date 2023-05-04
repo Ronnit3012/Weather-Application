@@ -3,7 +3,7 @@ const request = require('postman-request');
 // Using shorthand property of objects
 
 const forecast = (latitude, longitude, callback) => {
-    const url = 'http://api.weatherstack.com/current?access_key=cbb83db605e31c154ef5174511780320&query=' + latitude + ',' + longitude + '&units=m';
+    const url = `http://api.weatherstack.com/current?access_key=${process.env.WEATHERSTACK_ACCESS_TOKEN}&query=${latitude},${longitude}&units=m`;
 
     request({url, json: true}, (error, {body}) => {      // 'url: url' can be changed to 'url' and response object can be destructured to body property
         if(error) {
